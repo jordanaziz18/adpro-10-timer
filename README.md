@@ -12,5 +12,5 @@
 
 ![alt text](image-1.png)
 
-The order of "howdy" messages is always the same (spawn order), but the "done" messages can appear in any order after the timers complete, depending on task scheduling. This is a trait of using async executors to explicitly control task order.
+The order of "howdy" messages is always the same (spawn order), but the "done" messages can appear in any order after the timers complete, depending on task scheduling. This is a trait of using async executors to explicitly control task order. when using drop(spawner) the executor knows no more tasks will be added and will exit once all current tasks are finished. If we dont use the drop spawner, the executor will wait forever for new tasks, causing the program to hang even after all tasks are done.
 
